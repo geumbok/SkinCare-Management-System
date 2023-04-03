@@ -1,13 +1,11 @@
-
 import java.util.Scanner;
 
-public class SkinCare {
+public class SkinCareManager {
 	static String suncream = "suncream"; static String pimple_balm = "pimple_balm"; static String moisture_cream = "moisture_cream";
 
 	public static void main(String[] args) {
 		
 		int number=0; 
-		
 		Scanner sc = new Scanner(System.in);
 
 		while(number!=6) {
@@ -41,6 +39,7 @@ public class SkinCare {
 	public static void editSkinCare() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Which do you want to edit?:");
+		
 		String editItem = sc.nextLine();
 		System.out.println(editItem);
 	}
