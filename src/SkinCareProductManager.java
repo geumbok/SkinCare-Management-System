@@ -1,6 +1,9 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
+import SkinCareProduct.SkinCareProduct;
+import SkinCareProduct.UsaProduct;
+
 public class SkinCareProductManager {
    
    ArrayList<SkinCareProduct> skinCareProducts = new ArrayList<SkinCareProduct>();
@@ -10,19 +13,29 @@ public class SkinCareProductManager {
    }
 
    public void addSkinCareProduct() {
-      SkinCareProduct skinCareProduct = new SkinCareProduct();
-      System.out.print("Product Name:");
-      skinCareProduct.name = input.next();
-      input.next();
-      System.out.print("Product Price:");
-      skinCareProduct.price = input.next();
-      input.nextLine();
-      System.out.print("Product Expiration date:");
-      skinCareProduct.expirationDate = input.next();
-      input.nextLine();
-      System.out.print("Product Effect:");
-      skinCareProduct.effect = input.nextLine();
-      skinCareProducts.add(skinCareProduct);
+      int country=0;
+      SkinCareProduct skinCareProduct;
+	  while(country!=1 && country !=2) {
+		  System.out.print("1 for Korea");
+		  System.out.print("2 for Usa"); 
+		  System.out.print("Select num for skinCareProduct country between 1 and 2:"); 
+		  country=input.nextInt();
+		  if(country==1) {
+			  skinCareProduct = new SkinCareProduct();
+			  skinCareProduct.getUserInput(input);
+			  skinCareProducts.add(skinCareProduct);
+			  break;
+		  }
+		  else if(country==2) {
+			  skinCareProduct = new UsaProduct();
+			  skinCareProduct.getUserInput(input);
+			  skinCareProducts.add(skinCareProduct);
+			  break;
+		  }
+		  else {
+			  System.out.print("Select num for skinCareProduct country between 1 and 2:");
+		  }
+	  }
    }
       
       
@@ -31,7 +44,7 @@ public class SkinCareProductManager {
       String productName = input.next();
       int index = -1;
       for (int i = 0; i<skinCareProducts.size(); i++) {
-         if (skinCareProducts.get(i).name.equals(productName)) {
+         if (skinCareProducts.get(i).getName().equals(productName)) {
             index = i;
             break; 
          }
@@ -52,7 +65,7 @@ public class SkinCareProductManager {
       String productName = input.next();
       for (int i = 0; i<skinCareProducts.size(); i++) {
          SkinCareProduct skinCareProduct = skinCareProducts.get(i);
-         if (skinCareProduct.name.equals(productName)) {
+         if (skinCareProduct.getName().equals(productName)) {
             
             int num = 0;
             while (num != 5) {
@@ -67,19 +80,23 @@ public class SkinCareProductManager {
                
                if (num == 1) {
                   System.out.print("Product Name:");
-                  skinCareProduct.name = input.next();
+                  String name = input.next();
+                  skinCareProduct.setName(name);
                }
                else if (num == 2) {
                   System.out.print("Product Price:");
-                  skinCareProduct.price = input.next();
+                  String price = input.next();
+                  skinCareProduct.setPrice(price);
                }
                else if (num == 3) {
                   System.out.print("Product Expiration Date:");
-                  skinCareProduct.expirationDate = input.next();
+                  String expirationDate = input.next();
+                  skinCareProduct.setExpirationDate(expirationDate);
                }
                else if (num == 4) {
                   System.out.print("Product effect:");
-                  skinCareProduct.effect = input.next();
+                  String effect = input.next();
+                  skinCareProduct.setEffect(effect);
                }
                else {
                   continue;

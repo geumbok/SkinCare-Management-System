@@ -27,6 +27,7 @@ public class MenuManager {
          }
          else if (num == 4) {
             skinCareProductManager.viewSkinCareProducts ();
+            
          }
          else {
             continue;
