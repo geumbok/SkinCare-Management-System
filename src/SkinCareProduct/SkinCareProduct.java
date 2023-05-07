@@ -7,20 +7,32 @@ public class SkinCareProduct {
     protected String price;
     protected String expirationDate;
     protected String effect;
+    protected String packDate;
     
     public SkinCareProduct() {
     }
+    
+    public SkinCareProduct(MadeIn country) {
+    	this.country=country;
+    }
+    
     public SkinCareProduct(String name) {
        this.name = name;
     }
     
-    public SkinCareProduct(String name, String price, 
-                         String expirationDate, String effect) {
+    public SkinCareProduct(MadeIn country, String name, String price, String expirationDate, String effect) {
        this.name = name;
        this.price = price;
        this.expirationDate = expirationDate;
        this.effect = effect;
     }
+    
+    public SkinCareProduct(String name, String price, String expirationDate, String effect) {
+        this.name = name;
+        this.price = price;
+        this.expirationDate = expirationDate;
+        this.effect = effect;
+     }
     
     public MadeIn getCountry() {
 		return country;
@@ -46,6 +58,9 @@ public class SkinCareProduct {
 	public void setExpirationDate(String expirationDate) {
 		this.expirationDate = expirationDate;
 	}
+	public void setPackDate(String packDate) {
+		this.packDate = packDate;
+	}
 	public String getEffect() {
 		return effect;
 	}
@@ -53,8 +68,27 @@ public class SkinCareProduct {
 		this.effect = effect;
 	}
 	
+	
     public void printInfo() {
-       System.out.println("Product Name:" + name + " price:" + price +
+    	String scountry="none";
+    	switch(this.country) {
+    	case Korea:
+    		scountry="Kor.";
+    		break;
+    	case Usa:
+    		scountry="Us.";
+    		break;
+    	case Norway:
+    		scountry="Nor.";
+    		break;
+    	case Japan:
+    		scountry="Jap.";
+    		break;
+    	default:
+    		
+    	}
+    	
+        System.out.println("country:" + scountry + "Product Name:" + name + " price:" + price +
                         " expirationDate:" + expirationDate + " effect:" + effect);
     }
     

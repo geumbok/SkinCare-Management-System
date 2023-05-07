@@ -3,6 +3,11 @@ package SkinCareProduct;
 import java.util.Scanner;
 
 public class UsaProduct extends SkinCareProduct {
+	
+	public UsaProduct(MadeIn country) {
+    	super(country);
+    }
+	
 	public void getUserInput(Scanner input) {
     	System.out.print("Product Name:");
         String name = input.next();
