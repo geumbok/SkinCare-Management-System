@@ -19,12 +19,25 @@ public class SkinCareProduct {
     public SkinCareProduct(String name) {
        this.name = name;
     }
+    public SkinCareProduct(MadeIn country, String name) {
+    	this.country=country;
+    	this.name=name;
+    }
+    public SkinCareProduct(String name, String price) {
+    	this.name=name;
+    	this.price=price;
+    }
     
-    public SkinCareProduct(MadeIn country, String name, String price, String expirationDate, String effect) {
-       this.name = name;
-       this.price = price;
-       this.expirationDate = expirationDate;
-       this.effect = effect;
+    public SkinCareProduct(MadeIn country, String name, String price) {
+    	this.country=country;
+    	this.name=name;
+    	this.price=price;
+    }
+    public SkinCareProduct(MadeIn country, String name, String price, String expirationDate) {
+    	this.country=country;
+    	this.name=name;
+    	this.price=price;
+    	this.expirationDate=expirationDate;
     }
     
     public SkinCareProduct(String name, String price, String expirationDate, String effect) {
@@ -32,7 +45,28 @@ public class SkinCareProduct {
         this.price = price;
         this.expirationDate = expirationDate;
         this.effect = effect;
-     }
+    }
+    public SkinCareProduct(MadeIn country, String name, String price, String expirationDate, String effect) {
+        this.name = name;
+        this.price = price;
+        this.expirationDate = expirationDate;
+        this.effect = effect;
+    }
+    public SkinCareProduct(String name, String price, String expirationDate, String effect, String packDate) {
+        this.name = name;
+        this.price = price;
+        this.expirationDate = expirationDate;
+        this.effect = effect;
+        this.packDate=packDate;
+    }
+    public SkinCareProduct(MadeIn country, String name, String price, String expirationDate, String effect, String packDate) {
+        this.name = name;
+        this.price = price;
+        this.expirationDate = expirationDate;
+        this.effect = effect;
+        this.packDate=packDate;
+    }
+    
     
     public MadeIn getCountry() {
 		return country;
@@ -57,6 +91,9 @@ public class SkinCareProduct {
 	}
 	public void setExpirationDate(String expirationDate) {
 		this.expirationDate = expirationDate;
+	}
+	public String getPackDate() {
+		return packDate;
 	}
 	public void setPackDate(String packDate) {
 		this.packDate = packDate;
