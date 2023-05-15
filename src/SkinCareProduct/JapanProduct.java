@@ -2,7 +2,7 @@ package SkinCareProduct;
 
 import java.util.Scanner;
 
-public class JapanProduct extends SkinCareProduct {
+public class JapanProduct extends SkinCareProduct implements ProductInput{
 	
 	protected String parentExpirationDate;
     protected String parentEffect;
