@@ -1,5 +1,6 @@
 package forProject;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -8,13 +9,16 @@ import SkinCareProduct.JapanProduct;
 import SkinCareProduct.KoreaProduct;
 import SkinCareProduct.MadeIn;
 import SkinCareProduct.ProductInput;
-import SkinCareProduct.SkinCareProduct;
 import SkinCareProduct.UsaProduct;
 
-public class SkinCareProductManager {
+public class SkinCareProductManager implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3146469726622892599L;
 	ArrayList<ProductInput> skinCareProducts = new ArrayList<ProductInput>();
-	Scanner input;
+	transient Scanner input;
 	SkinCareProductManager(Scanner input) {
 		this.input = input;
 	}
