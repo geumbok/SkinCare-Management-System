@@ -1,11 +1,17 @@
 package SkinCareProduct;
+import java.io.Serializable;
 import java.util.Scanner;
 
 import exception.ExpirationDateFormatException;
 
-public abstract class SkinCareProduct implements ProductInput {
-   protected MadeIn country=MadeIn.Korea;
-   protected String name;
+public abstract class SkinCareProduct implements ProductInput,Serializable {
+   /**
+	 * 
+	 */
+	private static final long serialVersionUID = 2743517969790244345L;
+	
+	protected MadeIn country=MadeIn.Korea;
+    protected String name;
     protected String price;
     protected String expirationDate;
     protected String effect;
