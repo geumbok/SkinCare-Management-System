@@ -10,6 +10,12 @@ public interface ProductInput {
    
    public String getName();
    
+   public String getPrice();
+   
+   public String getEffect();
+   
+   public String getExpirationDate();
+   
    public void setName(String name);
    
    public void setPrice(String price);
